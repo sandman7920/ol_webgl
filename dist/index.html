@@ -1,0 +1,52 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="data:,">
+        <title>OL Test</title>
+        <style>
+            #map {
+                width: 100%;
+                border: 1px solid blueviolet;
+                /* height: 500px; */
+                height: calc(100vh - 200px);
+            }
+
+            .container {
+                display: flex;
+                margin-top: 10px;
+                gap: 2em;
+            }
+
+            label {
+                font-size: large;
+                cursor: pointer;
+                user-select: none;
+                display: inline-flex;
+                align-items: center;
+                border: 1px dashed lightgray;
+                padding: .2em;
+            }
+
+            .cb input {
+                width: 32px;
+                height: 32px;
+                cursor: pointer;
+            }
+        </style>
+      <script type="module" crossorigin src="/assets/index-mUTQf9ZV.js"></script>
+      <link rel="stylesheet" crossorigin href="/assets/index-BtPuoxOl.css">
+    </head>
+    <body>
+        <div id="map"></div>
+        <div class="container">
+            <label class="cb"><input type="checkbox" id="filter" /> Use Filter</label>
+            <label><span style="padding-right: 1em;">Layer Type</span>
+                <select id="layerType">
+                    <option value="WEBGL">WebGL Vector</option>
+                    <option value="vector">Vector</option>
+                </select>
+            </label>
+        </div>
+    </body>
+</html>
