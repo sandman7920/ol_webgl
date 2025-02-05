@@ -44,27 +44,29 @@ const common = {
     'stroke-width': [
         'match', //
         ['get', 'hover'],
-        HOVER_SELECTED,
-        stroke_width_selected,
-        stroke_width,
+        HOVER_SELECTED, // case selected
+        stroke_width_selected, // selected value
+        stroke_width, // default value (else)
+                      // this one breaks when layer is 'ol/layer/Vector', compileCaseExpression "out of range (i+1)"
+                      // see https://github.com/openlayers/openlayers/blob/main/src/ol/expr/cpu.js#L485
     ],
     'stroke-color': [
         'match',
         ['get', 'hover'],
-        HOVER_SELECTED,
-        stroke_color_selected,
-        HOVER_HOVERED,
-        stroke_color_hover,
-        stroke_color,
+        HOVER_SELECTED, // case selected
+        stroke_color_selected, // selected value
+        HOVER_HOVERED, // state hovered (ifelse)
+        stroke_color_hover, // hovered value
+        stroke_color, // default value (else)
     ],
     'fill-color': [
         'match',
         ['get', 'hover'],
-        HOVER_SELECTED,
-        fill_color_selected,
-        HOVER_HOVERED,
-        fill_color_hover,
-        fill_color,
+        HOVER_SELECTED, // case selected
+        fill_color_selected, // selected value
+        HOVER_HOVERED, // state hovered (ifelse)
+        fill_color_hover, // hovered value
+        fill_color, // default value (else)
     ],
 };
 
